@@ -1,1 +1,0 @@
-Define your data models using a library like Mongoose if you're working with MongoDB. Each model corresponds to a data entity.

@@ -1,1 +1,0 @@
-Controllers handle the business logic of your routes. Each controller is responsible for a specific resource or set of related actions.
