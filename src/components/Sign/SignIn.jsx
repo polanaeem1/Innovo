@@ -16,19 +16,19 @@ const SignIn = () => {
   const [Password, setPassword] = useState("");
 
   const [msg, setMsg] = useState("");
-  
-  const submit= async()=>{
-    
-    await axios.post("http://localhost:8080/api/user/login",{
-      email:Email,
-      password:Password,
-      
-    }).then(Response=>{
-      navigate("/dash");
-    }).catch(err=>{
-  setMsg(err.response.data);
-})
 
+  const submit = async () => {
+    await axios
+      .post("https://innovo.onrender.com/api/user/login", {
+        email: Email,
+        password: Password,
+      })
+      .then((Response) => {
+        navigate("/dash");
+      })
+      .catch((err) => {
+        setMsg(err.response.data);
+      });
   };
   return (
     <div className="w-full h-screen bg-n flex flex-col  items-center justify-center">
@@ -60,7 +60,7 @@ const SignIn = () => {
               }}
             />
           </div>
-          {(msg.length==0)?" ":<Alert color="red">{msg}</Alert>}
+          {msg.length == 0 ? " " : <Alert color="red">{msg}</Alert>}
           <Checkbox
             label={
               <Typography
